@@ -23,4 +23,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNumber);
     }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

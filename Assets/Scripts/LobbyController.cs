@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,14 +6,24 @@ using UnityEngine.UI;
 public class LobbyController : MonoBehaviour
 {
     [SerializeField] private Button playButton;
+    [SerializeField] private Button quitButton;
+    [SerializeField] private GameObject levels;
 
     void Start()
     {
-        playButton.onClick.AddListener(LoadLevel);
+        playButton.onClick.AddListener(PlayBtn);
+        quitButton.onClick.AddListener(QuitBtn);
+        levels.SetActive(false);
     }
 
-    private void LoadLevel()
+    private void QuitBtn()
     {
-        SceneController.instance.LoadScene(1);
+        Application.Quit();
+    }
+
+    private void PlayBtn()
+    {
+        playButton.gameObject.SetActive(false);
+        levels.SetActive(true);
     }
 }
