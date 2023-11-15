@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameUI gameUI;
+    [SerializeField] private GameOverController gameOverController;
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpSpeed;
     [SerializeField] private string nextScene;
@@ -54,13 +55,13 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("GameOver"))
         {
-            ReloadScene();
+            GameOverMenu();
         }
     }
 
-    private void ReloadScene()
+    private void GameOverMenu()
     {
-        SceneController.instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverController.EnableGameOver();
     }
 
     private void PlayerAnimation()
@@ -127,7 +128,7 @@ public class PlayerController : MonoBehaviour
         if (health == 0)
         {
             playerAnim.SetTrigger("isDead");
-            Invoke("ReloadScene", 1);
+            Invoke("GameOverMenu", 1);
             return;
         }
     }

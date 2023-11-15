@@ -244,10 +244,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUI: {fileID: 0}
+  gameOverController: {fileID: 0}
   playerSpeed: 3
   jumpSpeed: 50
   nextScene: 
-  mainScene: GameScene
 --- !u!61 &1418586817
 BoxCollider2D:
   m_ObjectHideFlags: 0
