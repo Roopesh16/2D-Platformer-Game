@@ -4,11 +4,15 @@ using TMPro;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
-    private int score = 0;
+    [SerializeField] private GameObject healthBar;
 
-    void Start()
+    private int score = 0;
+    private SpriteRenderer[] hearts;
+
+    private void Start()
     {
         DisplayScore();
+        hearts = healthBar.GetComponentsInChildren<SpriteRenderer>();
     }
 
     public void UpdateScore(int addScore)
@@ -20,5 +24,15 @@ public class GameUI : MonoBehaviour
     private void DisplayScore()
     {
         scoreText.text = "Score : " + score;
+    }
+
+    public void UpdateHealth(int index)
+    {
+        if(index < 0)
+        {
+            return;
+        }
+
+        hearts[index].enabled = false;
     }
 }

@@ -14,15 +14,14 @@ public class PlayerController : MonoBehaviour
     private float horizontalSpeed;
     private float verticalSpeed;
     private bool isGrounded;
-
+    private int health = 3;
     private void Start()
     {
         playerAnim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         horizontalSpeed = Input.GetAxisRaw("Horizontal");
         verticalSpeed = Input.GetAxisRaw("Jump");
@@ -33,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Platform")
+        if (other.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
         }
@@ -41,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Platform")
+        if (other.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
         }
@@ -49,15 +48,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "LevelOver")
+        if (other.CompareTag("LevelOver"))
         {
             SceneManager.LoadScene(nextScene);
         }
 
-        if (other.tag == "GameOver")
+        if (other.CompareTag("GameOver"))
         {
-            SceneManager.LoadScene(mainScene);
+            ReloadScene();
         }
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(mainScene);
     }
 
     private void PlayerAnimation()
@@ -113,5 +117,19 @@ public class PlayerController : MonoBehaviour
     public void UpdateScore()
     {
         gameUI.UpdateScore(10);
+    }
+
+    public void ReduceHealth()
+    {
+        health--;
+
+        gameUI.UpdateHealth(health);
+
+        if (health == 0)
+        {
+            playerAnim.SetTrigger("isDead");
+            Invoke("ReloadScene", 1);
+            return;
+        }
     }
 }
