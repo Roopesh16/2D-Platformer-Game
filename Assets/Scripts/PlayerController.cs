@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed;
     [SerializeField] private float jumpSpeed;
+    [SerializeField] private string nextScene;
+    [SerializeField] private string mainScene;
 
     private Animator playerAnim;
     private Rigidbody2D playerRb;
@@ -30,21 +32,36 @@ public class PlayerController : MonoBehaviour
         PlayerMovement();
     }
 
-    private void OnCollisionStay2D(Collision2D other) {
-        if(other.gameObject.tag == "Platform")
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Platform")
         {
             isGrounded = true;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
-        if(other.gameObject.tag == "Platform")
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Platform")
         {
             isGrounded = false;
         }
     }
 
-    void PlayerAnimation()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "LevelOver")
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+
+        if (other.tag == "GameOver")
+        {
+            SceneManager.LoadScene(mainScene);
+        }
+    }
+
+    private void PlayerAnimation()
     {
         playerAnim.SetFloat("Speed", horizontalSpeed);
         Vector2 scale = transform.localScale;
@@ -79,16 +96,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void PlayerMovement()
+    private void PlayerMovement()
     {
         Vector2 playerPosition = transform.position;
-        if(Mathf.Abs(horizontalSpeed) > 0)
+        if (Mathf.Abs(horizontalSpeed) > 0)
         {
             playerPosition.x += horizontalSpeed * playerSpeed * Time.deltaTime;
             transform.position = playerPosition;
         }
 
-        if(verticalSpeed > 0 && isGrounded)
+        if (verticalSpeed > 0 && isGrounded)
         {
             playerRb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Force);
         }
