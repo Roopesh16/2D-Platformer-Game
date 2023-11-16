@@ -48,11 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("LevelOver"))
-        {
-            SceneManager.LoadScene(nextScene);
-        }
-
+        
         if (other.CompareTag("GameOver"))
         {
             GameOverMenu();
