@@ -23,7 +23,7 @@ public class GameUI : MonoBehaviour
 
     private void DisplayScore()
     {
-        scoreText.text = "Score : " + score;
+        scoreText.text = "SCORE : " + score;
     }
 
     public void UpdateHealth(int index)

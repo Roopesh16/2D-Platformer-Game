@@ -1,16 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
     [SerializeField] private Button restartBtn;
-    [SerializeField] private Button quitBtn;
+    [SerializeField] private Button lobbyBtn;
 
     void Start()
     {
         restartBtn.onClick.AddListener(RestartLevel);
-        quitBtn.onClick.AddListener(LoadLobby);
+        lobbyBtn.onClick.AddListener(LoadLobby);
         gameObject.SetActive(false);
     }
 
