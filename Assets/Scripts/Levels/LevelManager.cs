@@ -2,6 +2,7 @@ using System.ComponentModel;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum LevelStatus
 {
@@ -13,6 +14,7 @@ public class LevelManager : MonoBehaviour
 {
     private static LevelManager instance = null;
     public static LevelManager Instance { get { return instance; } }
+
 
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class LevelManager : MonoBehaviour
     {
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
         print(nextIndex + " Unlocked");
+
         if (nextIndex <= 3)
         {
             SetLevelStatus(nextIndex, LevelStatus.UNLOCKED);

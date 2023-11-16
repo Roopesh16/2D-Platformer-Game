@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
 public class LevelBtnView : MonoBehaviour
 {
     [SerializeField] private int levelNumber;
@@ -12,16 +11,13 @@ public class LevelBtnView : MonoBehaviour
         levelBtn = GetComponent<Button>();
         levelBtn.onClick.AddListener(LoadLevel);
         levelBtn.interactable = false;
-        LevelManager.Instance.SetLevelStatus(levelNumber, LevelStatus.LOCKED);
-
-        if (levelNumber == 1 && LevelManager.Instance.GetLevelStatus(1) == LevelStatus.LOCKED)
+        if(levelNumber == 1)
         {
             levelBtn.interactable = true;
-            LevelManager.Instance.SetLevelStatus(1, LevelStatus.UNLOCKED);
         }
-        else if(LevelManager.Instance.GetLevelStatus(levelNumber) == LevelStatus.UNLOCKED)
+
+        if(levelNumber != 1 && LevelManager.Instance.GetLevelStatus(levelNumber) == LevelStatus.UNLOCKED)
         {
-            print(levelNumber + " Unlocked");
             levelBtn.interactable = true;
         }
     }
