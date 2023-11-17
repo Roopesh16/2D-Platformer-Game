@@ -815,10 +815,12 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: e5cb0976ee7cf93489107ede5175519b, type: 3}
   - audioType: 4
     audioClip: {fileID: 8300000, guid: e298ed73017db8c4fa4255c45e5a9f0a, type: 3}
+  - audioType: 5
+    audioClip: {fileID: 8300000, guid: d76c71e98617e1c41a5cdc490eb1bee1, type: 3}
   - audioType: 6
     audioClip: {fileID: 8300000, guid: 31b2284e8ab3f244182080ca7da474b7, type: 3}
-  - audioType: 5
-    audioClip: {fileID: 8300000, guid: 68c65aec95671b549be3b900cc305b1e, type: 3}
+  - audioType: 7
+    audioClip: {fileID: 8300000, guid: 31b2284e8ab3f244182080ca7da474b7, type: 3}
 --- !u!81 &455476612
 AudioListener:
   m_ObjectHideFlags: 0

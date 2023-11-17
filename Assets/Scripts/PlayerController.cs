@@ -98,7 +98,6 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         Vector2 playerPosition = transform.position;
-        AudioManager.Instance.PlaySfx(AudioTypes.WALK);
         if (Mathf.Abs(horizontalSpeed) > 0)
         {
             playerPosition.x += horizontalSpeed * playerSpeed * Time.deltaTime;

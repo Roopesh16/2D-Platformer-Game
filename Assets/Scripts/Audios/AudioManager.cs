@@ -8,6 +8,7 @@ public enum AudioTypes
     WALK,
     JUMP,
     HIT,
+    KEY,
     GAME_OVER,
     LEVEL_COMPLETE
 }
