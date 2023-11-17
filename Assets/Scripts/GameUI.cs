@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
@@ -7,12 +8,12 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject healthBar;
 
     private int score = 0;
-    private SpriteRenderer[] hearts;
+    private Image[] hearts;
 
     private void Start()
     {
         DisplayScore();
-        hearts = healthBar.GetComponentsInChildren<SpriteRenderer>();
+        hearts = healthBar.GetComponentsInChildren<Image>();
     }
 
     public void UpdateScore(int addScore)

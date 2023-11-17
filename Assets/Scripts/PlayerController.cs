@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         if (health == 0)
         {
             playerAnim.SetTrigger("isDead");
-            Invoke("GameOverMenu", 1);
+            Invoke("GameOverMenu",1);
             return;
         }
     }

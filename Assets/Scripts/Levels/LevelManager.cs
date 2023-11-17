@@ -27,10 +27,10 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    private void Start()
-    {
-        PlayerPrefs.DeleteAll();
-    }
+    // private void Start()
+    // {
+    //     PlayerPrefs.DeleteAll();
+    // }
 
     public LevelStatus GetLevelStatus(int index)
     {
@@ -46,7 +46,6 @@ public class LevelManager : MonoBehaviour
     public void UnlockLevel()
     {
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        print(nextIndex + " Unlocked");
 
         if (nextIndex <= 5)
         {
