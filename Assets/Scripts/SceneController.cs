@@ -13,10 +13,10 @@ public class SceneController : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
     }
 
     public void LoadScene(int sceneNumber)

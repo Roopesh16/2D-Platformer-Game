@@ -23,6 +23,7 @@ public class LobbyController : MonoBehaviour
 
     private void PlayBtn()
     {
+        AudioManager.Instance.PlaySfx(AudioTypes.CLICK);
         playButton.gameObject.SetActive(false);
         levels.SetActive(true);
     }

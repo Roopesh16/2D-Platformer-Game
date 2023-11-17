@@ -6,7 +6,7 @@ public class LevelBtnView : MonoBehaviour
     [SerializeField] private int levelNumber;
     private Button levelBtn;
 
-    void Start()
+    private void Start()
     {
         levelBtn = GetComponent<Button>();
         levelBtn.onClick.AddListener(LoadLevel);
@@ -24,6 +24,7 @@ public class LevelBtnView : MonoBehaviour
 
     private void LoadLevel()
     {
+        AudioManager.Instance.PlaySfx(AudioTypes.CLICK);
         SceneController.instance.LoadScene(levelNumber);
     }
 }

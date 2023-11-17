@@ -1,8 +1,5 @@
-using System.ComponentModel;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public enum LevelStatus
 {
@@ -24,10 +21,15 @@ public class LevelManager : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     public LevelStatus GetLevelStatus(int index)
@@ -46,7 +48,7 @@ public class LevelManager : MonoBehaviour
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
         print(nextIndex + " Unlocked");
 
-        if (nextIndex <= 3)
+        if (nextIndex <= 5)
         {
             SetLevelStatus(nextIndex, LevelStatus.UNLOCKED);
         }
