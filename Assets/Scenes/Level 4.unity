@@ -187,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &26287800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -919,7 +919,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1.0625, y: 1.5, z: 0}
   m_MaxChunkCount: 16
@@ -1957,6 +1957,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e647d8b4a81d7174eacf6c92573b42b9, type: 3}
+--- !u!1001 &634723940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7537845349913782131, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_Name
+      value: Teleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 43.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782141, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537845349913782142, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: lobbyBtn
+      value: 
+      objectReference: {fileID: 155493375}
+    - target: {fileID: 7537845349913782142, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: levelOver
+      value: 
+      objectReference: {fileID: 1082650143}
+    - target: {fileID: 7537845349913782142, guid: b04255f62627aed43a515e9b2d24b225,
+        type: 3}
+      propertyPath: restartBtn
+      value: 
+      objectReference: {fileID: 795085921}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b04255f62627aed43a515e9b2d24b225, type: 3}
 --- !u!1 &674291926
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1082650144
 RectTransform:
   m_ObjectHideFlags: 0
