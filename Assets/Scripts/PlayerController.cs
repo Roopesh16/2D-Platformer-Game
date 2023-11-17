@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+
         if (other.CompareTag("GameOver"))
         {
             GameOverMenu();
@@ -84,9 +84,9 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("canCrouch", false);
         }
 
-
         if (verticalSpeed > 0 && isGrounded)
         {
+            AudioManager.Instance.PlaySfx(AudioTypes.JUMP);
             playerAnim.SetBool("canJump", true);
         }
         else
@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerMovement()
     {
         Vector2 playerPosition = transform.position;
+        AudioManager.Instance.PlaySfx(AudioTypes.WALK);
         if (Mathf.Abs(horizontalSpeed) > 0)
         {
             playerPosition.x += horizontalSpeed * playerSpeed * Time.deltaTime;

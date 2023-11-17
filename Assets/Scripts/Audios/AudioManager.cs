@@ -5,7 +5,8 @@ public enum AudioTypes
 {
     BGM,
     CLICK,
-    DEATH,
+    WALK,
+    JUMP,
     HIT
 }
 
