@@ -18,6 +18,7 @@ public class LevelOverController : MonoBehaviour
     {
         if (other.GetComponent<PlayerController>() != null)
         {
+            AudioManager.Instance.PlaySfx(AudioTypes.LEVEL_COMPLETE);
             other.GetComponent<PlayerController>().enabled = false;
             LevelManager.Instance.UnlockLevel();
             levelOver.SetActive(true);

@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerController>() != null)
         {
+            AudioManager.Instance.PlaySfx(AudioTypes.HIT);
             other.gameObject.GetComponent<PlayerController>().ReduceHealth();
         }
     }

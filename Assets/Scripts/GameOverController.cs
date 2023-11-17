@@ -15,6 +15,7 @@ public class GameOverController : MonoBehaviour
 
     public void EnableGameOver()
     {
+        AudioManager.Instance.PlaySfx(AudioTypes.GAME_OVER);
         gameObject.SetActive(true);
     }
 

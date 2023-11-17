@@ -7,7 +7,9 @@ public enum AudioTypes
     CLICK,
     WALK,
     JUMP,
-    HIT
+    HIT,
+    GAME_OVER,
+    LEVEL_COMPLETE
 }
 
 [Serializable]
